@@ -13,6 +13,17 @@ import '../src/styles.css';
 // However, if you want to add any global styles, you must do it through this
 // file. So you need to manually create this file, with App being the default
 // export, and then import your global styles.
+
+// To use Theme UI we need to wrap stuff in a <Provider>. We can add a Provider
+// around every page, but that's cumbersome. Instead we can add a Provider here
+// around the entire app.
+import { ThemeProvider } from 'theme-ui';
+import myTheme from '../theme';
+
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider theme={myTheme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
