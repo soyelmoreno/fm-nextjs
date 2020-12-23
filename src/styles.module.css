@@ -1,0 +1,52 @@
+/*
+By design, CSS modules are scoped CSS classes and you'll need to import them
+within a JS file and apply them to an HTML element’s className.
+
+~~~~ Example.module.scss
+.exampleClassName {
+  font-size: 12px;
+}
+
+~~~~ Example.js
+import { exampleClassName } from "./Example.module.scss";
+const Example = () =>
+  <div className={exampleClassName}>
+    Scoped example
+  </div>;
+export default Example;
+
+https://github.com/vercel/next.js/discussions/16050
+https://github.com/css-modules/css-modules#css-modules
+*/
+
+/*
+@zackfalcon you are receiving this error because you are using html tags
+directly instead of classnames or ids in a file extension that is probably
+[filename].module.(css | scss | sass)
+
+File extensions with *.module.(css | scss | sass) are css modules and they can
+only target elements using classnames or ids and not using tag names. Although
+this is possible in other frameworks like create-react-app, it is not possible
+in next-js.
+
+My suggestion is using these html selector css in a separate file that doesn't
+contain the '.module' in it. Example: [filename].(css | scss | sass) -->
+styles.scss
+
+And instead of importing like this:
+  import styles from './styles.module.scss';
+
+Import like this:
+  import './styles.scss';
+
+https://github.com/vercel/next.js/discussions/12510
+*/
+.redText {
+  color: red;
+}
+.bgGreen {
+  background-color: lightgreen;
+}
+.wildLink {
+  font-style: italic;
+}

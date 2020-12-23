@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import NavButton from '../../src/components/NavButton';
 
 const Page = () => {
   // Note: in a function component, the whole function is the render() method.
@@ -45,6 +46,11 @@ const Page = () => {
       {/* Again, you need the slash to make this link relative to root. If you
         did router.push('user/[id]'), you would get /notes/user/2 because this
         file is within the notes directory. */}
+
+      {/* Bring in a custom component with an associated CSS module */}
+      <NavButton
+        onClick={(e) => router.push('/')}
+        label="Pink! Go Home"></NavButton>
     </div>
   );
 };
