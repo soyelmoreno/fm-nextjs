@@ -1,3 +1,5 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~ NextJS config
+
 // Create a config object. This extends the existing NextJS config object. Can
 // use this to customize things like Webpack, Babel.
 
@@ -22,6 +24,7 @@ module.exports = {
 //   PHASE_DEVELOPMENT_SERVER
 // } from 'next/constants';
 
+/*
 const {
   PHASE_PRODUCTION_BUILD,
   PHASE_PRODUCTION_SERVER,
@@ -52,3 +55,47 @@ module.exports = (phase, defaultConfig) => {
   }
   return defaultConfig;
 };
+*/
+
+// ~~~~~~~~~~~~~~~~~~~~~~~ Plugins
+
+// Examples: withPlugins(), withSass(), withOffline()
+
+//const withMyPlugin;
+// Next config:
+//const nextconfig = {};
+// Have to return a config object to module.exports. Your plugin is basically a
+// wrapper that set a few arguments into the next.config object.
+//module.exports = withMyPlugin(arg1, arg2, nextconfig);
+
+// We're gonna add a plugin that easily lets us add environment variables to our
+// NextJS app.
+
+// Without it, you would use a config object like this:
+//module.exports = {
+//  env: {
+//    myCustomKey: 'my-value',
+//    SECRET: 'notGonnaJustHardCodeMyAPIToken'
+//  }
+//};
+// Use an environmental variable from next.config.js in your app somewhere.
+// Next.js will replace process.env.customKey with 'my-value' at build time.
+//const val = process.env.myCustomKey; // 'my-value'
+
+// Install these: npm i next-env dotenv-load --save-dev
+const nextEnv = require('next-env');
+const dotenvLoad = require('dotenv-load');
+// Gonna look at env file, load up all the environmental variables, inject them
+dotenvLoad();
+// This part is actually creating the plugin with the environmental variables
+// loaded into it automatically.
+const withEnv = nextEnv();
+/*
+{
+  env: {
+    HELP_APP_URL: 'https://frontendmasters.com',
+    OTHER_VARIABLE: 'some other value'
+  }
+};
+*/
+module.exports = withEnv({});
