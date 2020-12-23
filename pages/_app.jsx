@@ -1,4 +1,8 @@
-import React from 'react';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+//import React from 'react';
+
 // If necessary, and hopefully it's not, we can create a stylesheet that applies
 // globally and import it. Can only do this in *this* file: _app.js
 import '../src/styles.css';
@@ -19,11 +23,15 @@ import '../src/styles.css';
 // around the entire app.
 import { ThemeProvider } from 'theme-ui';
 import myTheme from '../theme';
+import Nav from '../src/components/Nav';
 
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={myTheme}>
-      <Component {...pageProps} />
+      <div>
+        <Nav />
+        <Component {...pageProps} />
+      </div>
     </ThemeProvider>
   );
 }

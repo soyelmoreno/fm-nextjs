@@ -8,7 +8,7 @@ import { roboto } from '@theme-ui/presets';
 // any component that you want inside your React app. Think of it like:
 // ".containers-cars" is a CSS class.
 
-// Can refer to pre-defined values, (e.g. "muted")
+// Can refer to pre-defined values, (e.g. "muted", "primary")
 const theme = {
   ...roboto,
   colors: {

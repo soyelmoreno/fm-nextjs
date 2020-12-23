@@ -1,9 +1,12 @@
-import React from 'react';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+//import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import NavButton from '../../src/components/NavButton';
 
-const Page = () => {
+const MyPage = () => {
   // Note: in a function component, the whole function is the render() method.
   const router = useRouter();
   // router.query is an object with any associated params. The param name on the
@@ -55,4 +58,16 @@ const Page = () => {
   );
 };
 
-export default Page;
+const ScottsPage = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  return (
+    <div sx={{ variant: 'containers.page' }}>
+      <h1>Note: {id} </h1>
+    </div>
+  );
+};
+
+const useMyPage = false;
+export default useMyPage ? MyPage : ScottsPage;
