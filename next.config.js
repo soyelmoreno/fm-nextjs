@@ -89,7 +89,7 @@ const dotenvLoad = require('dotenv-load');
 dotenvLoad();
 // This part is actually creating the plugin with the environmental variables
 // loaded into it automatically.
-const withEnv = nextEnv();
+const withNextEnv = nextEnv();
 /*
 {
   env: {
@@ -98,4 +98,4 @@ const withEnv = nextEnv();
   }
 };
 */
-module.exports = withEnv({});
+module.exports = withNextEnv({});

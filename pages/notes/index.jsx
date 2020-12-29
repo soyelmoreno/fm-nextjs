@@ -17,7 +17,7 @@ const MyPage = () => (
     attribute does take an actual URL. You only need `as` for a dynamic route.
     Here, we use a dynamic route, but we're hard-coding the id */}
     <p>
-      <Link href="/notes/[id]" as={`/notes/1`}>
+      <Link href="/notes/[id]" as={`/notes/1`} passHref>
         <a>Note 1</a>
       </Link>
     </p>
@@ -25,7 +25,7 @@ const MyPage = () => (
     {/* Other examples */}
     <p>
       {/* In this dynamic route, we're passing in the id from a variable */}
-      <Link href="/user/[id].js" as={`/user/${user.id}`}>
+      <Link href="/user/[id].js" as={`/user/${user.id}`} passHref>
         <a>user</a>
       </Link>
     </p>
@@ -34,7 +34,7 @@ const MyPage = () => (
     <ul>
       {notes.map((note) => (
         <li key={note.id}>
-          <Link href="/notes/[id]" as={`/notes/${note.id}`}>
+          <Link href="/notes/[id]" as={`/notes/${note.id}`} passHref>
             <a>
               <strong>{note.title}</strong>
             </a>

@@ -17,6 +17,10 @@ import Link from 'next/link';
 // - Can pull out bunches of rules below and define a new variant in your theme,
 //   and then just refer to that variant below.
 
+// Note: If you're using emotion's JSX pragma feature (@jsx jsx), you must use
+// passHref on <Link> even if you use an <a> tag directly.
+// https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-custom-component-that-wraps-an-a-tag
+
 const Nav = () => (
   <header
     sx={{
@@ -34,13 +38,13 @@ const Nav = () => (
         variant: 'containers.page',
         height: '100%'
       }}>
-      <Link href="/">
+      <Link href="/" passHref>
         <a sx={{ fontWeight: 'bold', fontSize: 4, cursor: 'pointer' }}>
           Note App
         </a>
       </Link>
 
-      <Link href="/notes">
+      <Link href="/notes" passHref>
         <a sx={{ color: 'text', fontSize: 3, cursor: 'pointer' }}>notes</a>
       </Link>
 

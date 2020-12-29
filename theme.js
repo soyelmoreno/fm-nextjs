@@ -12,8 +12,8 @@ import { roboto } from '@theme-ui/presets';
 const theme = {
   ...roboto,
   colors: {
-    ...roboto.colors,
-    background: '#fec'
+    ...roboto.colors
+    // background: '#fec'
   },
   containers: {
     card: {
