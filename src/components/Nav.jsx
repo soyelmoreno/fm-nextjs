@@ -17,7 +17,7 @@ import Link from 'next/link';
 // - Can pull out bunches of rules below and define a new variant in your theme,
 //   and then just refer to that variant below.
 
-// Note: If you're using emotion's JSX pragma feature (@jsx jsx), you must use
+// Note: If you're using emotion's JSX pragma feature (at jsx jsx), you must use
 // passHref on <Link> even if you use an <a> tag directly.
 // https://nextjs.org/docs/api-reference/next/link#if-the-child-is-a-custom-component-that-wraps-an-a-tag
 
