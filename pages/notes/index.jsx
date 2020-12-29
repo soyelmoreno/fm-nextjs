@@ -57,12 +57,8 @@ const ScottsPage = () => (
         flexWrap: 'wrap'
       }}>
       {notes.map((note) => (
-        <div sx={{ width: '33%', p: 2 }}>
-          <Link
-            key={note.id}
-            href="/notes/[id]"
-            as={`/notes/${note.id}`}
-            passHref>
+        <div sx={{ width: '33%', p: 2 }} key={note.id}>
+          <Link href="/notes/[id]" as={`/notes/${note.id}`} passHref>
             <a sx={{ textDecoration: 'none', cursor: 'pointer' }}>
               <div sx={{ variant: 'containers.card' }}>
                 <strong>{note.title}</strong>
