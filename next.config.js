@@ -15,7 +15,7 @@ module.exports = {
 };
 */
 
-// The other way, which gives you a little more power, it to return a function.
+// The other way, which gives you a little more power, is to return a function.
 
 // Import some stuff. Oops, this file doesn't get compiled by Babel, so we have
 // to go back to CommonJS.

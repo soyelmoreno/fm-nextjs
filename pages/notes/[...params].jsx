@@ -8,7 +8,8 @@ const Page = () => {
   // Useful when you have a bunch of pages with nearly identical layout, but
   // they all need their own URL. E.g., documentation pages.
 
-  // `params` is an array with all the matching routes.
+  // `params` is an array with all the matching routes (i.e.,
+  // directories/folders) in the url.
   // notes/1/2/3/4 ---> params = [1, 2, 3, 4]
   const { params } = router.query;
   //console.log(params); // localhost:3000/notes/a/b/c/d ---> ["a", "b", "c", "d"]
@@ -21,7 +22,7 @@ const Page = () => {
   Just add another set of [ ] over your catch-all, and now /docs will be matched
   with all of its children. Value of parent path would be an empty object.
   */
-  return <h1>Note </h1>;
+  return <h1>Note Params</h1>;
 };
 
 export default Page;
