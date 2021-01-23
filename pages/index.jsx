@@ -52,6 +52,7 @@ export default useMyPage ? MyPage : ScottsPage;
  * before bundling thgis file for the browser. So, it only helps you obtain
  * something to pass as props at build time.
  */
+/*
 export async function getStaticProps(context) {
   // Here, do whatever you want to get some data to pass as props to your
   // default exported component. Content from a CMS? Make a call to your CMS,
@@ -66,6 +67,7 @@ export async function getStaticProps(context) {
   // happened yet, i.e., there is no browser, and a user has not yet tried to
   // navigate to a URL. So, how do the params get here? getStaticPaths.
 }
+*/
 
 /**
  * Now, if we do have a dynamic URL, and we do need the value of params in order
@@ -78,6 +80,7 @@ export async function getStaticProps(context) {
  * directory with markdown files, or access some JSON file somewhere, to get a
  * list of paths.
  */
+/*
 export async function getStaticPaths() {
   // Get all the static paths for your posts from an API or file system
   const results = await fetch('/api/posts');
@@ -85,16 +88,17 @@ export async function getStaticPaths() {
   const paths = posts.map((post) => ({ params: { slug: post.slug } }));
   // Must return an object with `paths` property whose value is an array of path
   // objects
-  /*
-  paths = {}
-  [
-    {params: {slug: 'get-started-with-node'}},
-    {params: {slug: 'top-frameworks'}}
-  ]
-  */
+
+  // paths = {}
+  // [
+  //   {params: {slug: 'get-started-with-node'}},
+  //   {params: {slug: 'top-frameworks'}}
+  // ]
+
   return { paths };
   // Once you have this, now {params} is available to getStaticProps()! if you
   // use getStaticPaths, then you have to use getStaticProps. Otherwise, there's
   // no reason to use getStaticPaths. Use them together. But only need
   // getStaticPaths if it is a dynamic URL.
 }
+*/
