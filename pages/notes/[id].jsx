@@ -73,7 +73,7 @@ export default useMyPage ? MyPage : ScottsPage;
 // be indexed by Google, so normally, we would just do client-side
 // fetching/rendering. But for the sake of example, let's do SSR.
 export async function getServerSideProps({ params, req, res }) {
-  const response = await fetch(`http://localhost:3000/api/note/${params.id}`);
+  const response = await fetch(`${process.env.API_URL}/api/note/${params.id}`);
 
   // So much power! Attempt to fetch a specific note. If doesn't exists,
   // redirect to the notes index page.

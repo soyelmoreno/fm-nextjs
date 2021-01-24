@@ -76,7 +76,7 @@ export async function getServerSideProps() {
   // How to get the domain and port? There's a few ways. Could get it from the
   // headers, which can be passed into getServerSideProps(). Or just use
   // environmental variables. Staging, production, localhost, etc.
-  const res = await fetch(`http://localhost:3000/api/note/`);
+  const res = await fetch(`${process.env.API_URL}/api/note/`);
   const { data } = await res.json();
   console.log(data);
   return {
